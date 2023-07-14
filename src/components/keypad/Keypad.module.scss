@@ -1,0 +1,52 @@
+$border-radius: 5px;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 3em;
+  height: 3em;
+  color: var(--primary-white);
+  background-color: black;
+  box-shadow: var(--primary-shadow), 0 0 2px rgb(0, 242, 255);
+  border-radius: $border-radius;
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  animation: glow 1s ease-in-out infinite alternate;
+  border: 0.5px solid white;
+  // animation: wiggle 0.1s linear;
+}
+
+.down {
+  background-color: rgb(0, 0, 0);
+  transform: translateX(2px) translateY(2px) scale(0.9);
+  color: red;
+  border: 0.5px solid red;
+}
+
+.keypad {
+  max-width: fit-content;
+  padding: 10px;
+  border-radius: $border-radius;
+  background-color: var(--secondary-grey);
+  display: grid;
+  gap: 0.5em;
+  .horizontal {
+    display: flex;
+    gap: 0.5em;
+  }
+  .tab {
+    width: 0em;
+  }
+  .caps_lock {
+    width: 0.6em;
+  }
+  .shift {
+    width: 2em;
+  }
+  .space {
+  }
+  .horizontal_spacebar {
+    margin-left: 9.5em;
+  }
+}

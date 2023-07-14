@@ -1,0 +1,25 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o App-RescriptLearningApp.cmi : cp ../bs/src/App-RescriptLearningApp.cmi
+o App-RescriptLearningApp.cmj : cp ../bs/src/App-RescriptLearningApp.cmj
+o App-RescriptLearningApp.cmt : cp ../bs/src/App-RescriptLearningApp.cmt
+o App.res : cp ../../src/App.res
+o main-RescriptLearningApp.cmi : cp ../bs/src/main-RescriptLearningApp.cmi
+o main-RescriptLearningApp.cmj : cp ../bs/src/main-RescriptLearningApp.cmj
+o main-RescriptLearningApp.cmt : cp ../bs/src/main-RescriptLearningApp.cmt
+o main.res : cp ../../src/main.res
+o Keypad-RescriptLearningApp.cmi : cp ../bs/src/components/keypad/Keypad-RescriptLearningApp.cmi
+o Keypad-RescriptLearningApp.cmj : cp ../bs/src/components/keypad/Keypad-RescriptLearningApp.cmj
+o Keypad-RescriptLearningApp.cmt : cp ../bs/src/components/keypad/Keypad-RescriptLearningApp.cmt
+o Keypad.res : cp ../../src/components/keypad/Keypad.res
+o Styles-RescriptLearningApp.cmi : cp ../bs/src/styles/Styles-RescriptLearningApp.cmi
+o Styles-RescriptLearningApp.cmj : cp ../bs/src/styles/Styles-RescriptLearningApp.cmj
+o Styles-RescriptLearningApp.cmt : cp ../bs/src/styles/Styles-RescriptLearningApp.cmt
+o Styles.res : cp ../../src/styles/Styles.res
+o RescriptLearningApp.cmi : cp ../bs/RescriptLearningApp.cmi
+o RescriptLearningApp.cmj : cp ../bs/RescriptLearningApp.cmj
+o RescriptLearningApp.cmt : cp ../bs/RescriptLearningApp.cmt
+build install.stamp : touch App-RescriptLearningApp.cmi App-RescriptLearningApp.cmj main-RescriptLearningApp.cmi main-RescriptLearningApp.cmj Keypad-RescriptLearningApp.cmi Keypad-RescriptLearningApp.cmj Styles-RescriptLearningApp.cmi Styles-RescriptLearningApp.cmj RescriptLearningApp.cmi RescriptLearningApp.cmj

@@ -1,0 +1,6 @@
+:root {
+  --background-grey: rgba(65, 65, 65, 0.56);
+  --primary-white: white;
+  --primary-shadow: grey 1px 1px 1px 1px;
+  --secondary-grey: rgba(146, 146, 146, 0.199);
+}

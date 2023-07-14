@@ -1,0 +1,30 @@
+rescript = 1
+g_finger := /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/@glennsl/rescript-fetch/lib/ocaml/install.stamp
+g_finger := /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/@rescript/core/lib/ocaml/install.stamp
+g_finger := /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/@rescript/react/lib/ocaml/install.stamp
+g_finger := /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/rescript-webapi/lib/ocaml/install.stamp
+rule astj
+  command = /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4 -bs-jsx 4 -bs-jsx-mode automatic -bs-super-errors -bs-no-version-header -open RescriptCore -absname -bs-ast -o $out $i
+o src/App.ast : astj ../../src/App.res
+rule deps
+  command = /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 57a4bdfeafff291343393b969d336d4e -bs-ns RescriptLearningApp $in
+  restat = 1
+o src/App.d : deps src/App.ast
+rule mij
+  command = /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/rescript/darwinarm64/bsc.exe -bs-ns RescriptLearningApp -I . -I src/styles -I src/components/keypad -I src/components -I src/assets -I src -I /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/@glennsl/rescript-fetch/lib/ocaml -I /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/@rescript/core/lib/ocaml -I /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/@rescript/react/lib/ocaml -I /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/rescript-webapi/lib/ocaml -bs-super-errors -bs-no-version-header -open RescriptCore  -bs-package-name rescript-learning-app -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/App-RescriptLearningApp.cmj src/App-RescriptLearningApp.cmi ../../src/App.bs.js : mij src/App.ast
+o src/main.ast : astj ../../src/main.res
+o src/main.d : deps src/main.ast
+o src/main-RescriptLearningApp.cmj src/main-RescriptLearningApp.cmi ../../src/main.bs.js : mij src/main.ast
+o src/components/keypad/Keypad.ast : astj ../../src/components/keypad/Keypad.res
+o src/components/keypad/Keypad.d : deps src/components/keypad/Keypad.ast
+o src/components/keypad/Keypad-RescriptLearningApp.cmj src/components/keypad/Keypad-RescriptLearningApp.cmi ../../src/components/keypad/Keypad.bs.js : mij src/components/keypad/Keypad.ast
+o src/styles/Styles.ast : astj ../../src/styles/Styles.res
+o src/styles/Styles.d : deps src/styles/Styles.ast
+o src/styles/Styles-RescriptLearningApp.cmj src/styles/Styles-RescriptLearningApp.cmi ../../src/styles/Styles.bs.js : mij src/styles/Styles.ast
+rule build_package
+  command = /Users/nithin.n/Documents/Nithin_github/rescript-learing-app/node_modules/rescript/darwinarm64/bsc.exe -w -49 -color always -no-alias-deps  $i
+  restat = 1
+o RescriptLearningApp.cmi : build_package RescriptLearningApp.mlmap
